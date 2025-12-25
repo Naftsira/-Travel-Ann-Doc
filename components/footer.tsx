@@ -7,18 +7,17 @@ const links = [
     items: [
       {
         title: "Tentang Kami",
+        times: "",
         href: "#",
       },
       {
         title: "Layanan Kami",
-        href: "#",
-      },
-      {
-        title: "Paket Kami",
+        times: "",
         href: "#",
       },
       {
         title: "Bagaimana Kami Bekerja?",
+        times: "",
         href: "#",
       },
     ],
@@ -28,10 +27,12 @@ const links = [
     items: [
       {
         title: "+62 895 3529 00998 (Nama)",
+        times: "",
         href: "#",
       },
       {
         title: "info@anntraveldoc.com",
+        times: "",
         href: "#",
       },
     ],
@@ -61,6 +62,7 @@ const links = [
     items: [
       {
         title: "partnership@anntraveldoc.com",
+        times: "",
         href: "#",
       },
     ],
