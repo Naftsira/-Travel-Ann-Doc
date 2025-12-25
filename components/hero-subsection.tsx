@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Menu, SendHorizonal, X } from "lucide-react";
 import Image from "next/image";
 import { AnimatedGroup } from "./ui/animated-group";
 import { TextEffect } from "./ui/text-effect";
@@ -60,12 +59,6 @@ export default function HeroSubSection() {
                       <Button asChild size="lg">
                         <Link href="/">
                           <span>Konsultasikan Sekarang!</span>
-                        </Link>
-                      </Button>
-
-                      <Button asChild size="lg" variant="outline">
-                        <Link href="/">
-                          <span>Tanya AnnBot</span>
                         </Link>
                       </Button>
                     </div>

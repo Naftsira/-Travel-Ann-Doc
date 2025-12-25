@@ -1,5 +1,3 @@
-import { Mail, SendHorizonal } from "lucide-react";
-import { Button } from "./ui/button";
 import { TextEffect } from "./ui/text-effect";
 import { AnimatedGroup } from "./ui/animated-group";
 import LogoCloud from "./logo-cloud";

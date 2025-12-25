@@ -185,7 +185,6 @@ export default function Chatbot() {
         )}
       </AnimatePresence>
 
-      {/* FAB: NAVY & GOLD */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}

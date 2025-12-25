@@ -15,12 +15,6 @@ export default function CallToAction() {
                 <span>Konsultasikan Sekarang!</span>
               </Link>
             </Button>
-
-            <Button asChild size="lg" variant="outline">
-              <Link href="/">
-                <span>Tanya AnnBot</span>
-              </Link>
-            </Button>
           </div>
         </div>
       </div>

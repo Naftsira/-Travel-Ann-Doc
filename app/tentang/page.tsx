@@ -1,4 +1,4 @@
-"use client"; // Tambahkan ini jika belum ada
+"use client";
 
 import dynamic from "next/dynamic";
 import StatsSection from "@/components/stats";
@@ -18,7 +18,6 @@ const GlobeDemo = dynamic(() => import("@/components/theGlobe").then((mod) => mo
 export default function AboutPage() {
   return (
     <div className="h-full">
-      {/* Sekarang GlobeDemo akan dimuat secara aman di browser saja */}
       <GlobeDemo />
 
       <StatsSection />

@@ -12,7 +12,7 @@ export const Card = React.memo(({ card, index, hovered, setHovered }: { card: an
     onMouseLeave={() => setHovered(null)}
     className={cn("rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out", hovered !== null && hovered !== index && "blur-sm scale-[0.98]")}
   >
-    <Image src={card.src} alt={card.title} fill placeholder="blur" className="object-cover object-center absolute  inset-0 " />
+    <Image src={card.src} alt={card.title} fill className="object-cover object-center absolute  inset-0 " />
     <div
       className={cn(
         "absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/10 to-transparent flex flex-col items-end flex-wrap justify-end gap-3 py-8 px-4 transition-opacity duration-300",
