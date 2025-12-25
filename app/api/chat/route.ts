@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY!;
 
-const PRIMARY_MODEL = "xiaomi/mimo-v2-flash:free";
-const FALLBACK_MODEL = "mistralai/mistral-7b-instruct:free";
+const PRIMARY_MODEL = "mistralai/mistral-7b-instruct:free";
+const FALLBACK_MODEL = "meta-llama/llama-3.3-70b-instruct:free";
 
 const SYSTEM_PROMPT = `
 Anda adalah asisten virtual profesional dari "Ann Travel Doc". 

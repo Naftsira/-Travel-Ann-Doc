@@ -1,6 +1,6 @@
 import FAQsThree from "@/components/faqs-3";
 
-export default function LayananPage({ children }: { children: React.ReactNode }) {
+export default function LayananLayout({ children }: { children: React.ReactNode }) {
   return (
     <main>
       {children}

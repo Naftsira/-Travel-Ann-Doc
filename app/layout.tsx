@@ -4,6 +4,7 @@ import "./globals.css";
 import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
 import CallToAction from "@/components/call-to-action";
+import Chatbot from "@/components/chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
           <HeroHeader />
         </header>
         {children}
+        <Chatbot />
 
         <footer>
           <CallToAction></CallToAction>

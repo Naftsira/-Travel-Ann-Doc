@@ -1,5 +1,6 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import Image from "next/image";
 
 export default function LogoCloud() {
   return (
@@ -12,20 +13,20 @@ export default function LogoCloud() {
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
             <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
               <div className="flex">
-                <img className="mx-auto h-40 w-fit dark:invert " src="/partners/andamas.avif" alt="Andamas Tour & Travel" height="40" width="auto" />
+                <Image className="mx-auto h-40 w-fit dark:invert " src="/partners/andamas.avif" alt="Andamas Tour & Travel" height={1} width={1} />
               </div>
 
               <div className="flex">
-                <img className="mx-auto h-40 w-fit dark:invert " src="/partners/charcoal.avif" alt="House of Charcoal" height="40" width="auto" />
+                <Image className="mx-auto h-40 w-fit dark:invert " src="/partners/charcoal.avif" alt="House of Charcoal" height={1} width={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-40 w-fit dark:invert " src="/partners/hikari.avif" alt="Hikari Abadi Teknik" height="40" width="auto" />
+                <Image className="mx-auto h-40 w-fit dark:invert " src="/partners/hikari.avif" alt="Hikari Abadi Teknik" height={1} width={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-40 w-fit dark:invert " src="/partners/sanwa.avif" alt="Sanwa Seiki" height="40" width="auto" />
+                <Image className="mx-auto h-40 w-fit dark:invert " src="/partners/sanwa.avif" alt="Sanwa Seiki" height={1} width={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-40 w-fit dark:invert " src="/partners/yos.avif" alt="Yos Travel Service" height="40" width="auto" />
+                <Image className="mx-auto h-40 w-fit dark:invert " src="/partners/yos.avif" alt="Yos Travel Service" height={1} width={1} />
               </div>
             </InfiniteSlider>
 

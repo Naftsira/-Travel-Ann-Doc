@@ -1,3 +1,3 @@
-export default function About() {
+export default function KerjaPage() {
   return <div>Ini kerja</div>;
 }

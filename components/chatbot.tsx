@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -25,7 +26,7 @@ export default function Chatbot() {
     {
       id: "welcome",
       role: "bot",
-      content: "Selamat datang. Saya asisten TechSolutions. Ada yang bisa saya bantu terkait layanan kami hari ini?",
+      content: "Selamat datang. Saya AnnBot. Ada yang bisa saya bantu terkait layanan kami hari ini?",
     },
   ]);
 
@@ -38,7 +39,6 @@ export default function Chatbot() {
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
-    // Membuat ID unik untuk pesan user
     const userMessageId = `user-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
     const userMessage: Message = {
       id: userMessageId,
@@ -64,7 +64,6 @@ export default function Chatbot() {
 
       if (!res.ok) throw new Error(data.error);
 
-      // Membuat ID unik untuk pesan bot
       const botMessageId = `bot-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
       setMessages((prev) => [
         ...prev,
@@ -75,7 +74,6 @@ export default function Chatbot() {
         },
       ]);
     } catch (error) {
-      // Membuat ID unik untuk pesan error agar tidak tabrakan dengan pesan error sebelumnya
       const errorMessageId = `err-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
       setMessages((prev) => [
         ...prev,
@@ -100,25 +98,23 @@ export default function Chatbot() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className={cn(
               "bg-white shadow-2xl border border-zinc-200 flex flex-col overflow-hidden transition-all duration-300",
-              // Mobile: Hampir Full Screen | Desktop: Ukuran Standar
               "fixed inset-x-4 bottom-20 top-4 md:relative md:inset-auto md:w-[400px] md:h-[600px] md:rounded-2xl border-t-4 border-t-[#D4AF37]"
             )}
           >
-            {/* Header: NAVY & GOLD */}
             <div className="bg-[#000080] p-4 flex justify-between items-center text-white">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-[#D4AF37] rounded-full text-[#000080]">
                   <Bot size={20} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm tracking-wide">TechSolutions Support</h3>
+                  <h3 className="font-bold text-sm tracking-wide">AnnBot Support</h3>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-[10px] text-zinc-300 uppercase tracking-widest font-medium">Available</span>
+                    <span className="text-[10px] text-zinc-300 uppercase tracking-widest font-medium">online</span>
                   </div>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="p-1.5 hover:bg-white/10 rounded-full transition-colors">
+              <button onClick={() => setIsOpen(false)} className="p-1.5 hover:bg-white/10 rounded-full transition-colors cursor-pointer">
                 <X size={20} />
               </button>
             </div>
@@ -139,7 +135,15 @@ export default function Chatbot() {
                     >
                       <ReactMarkdown
                         components={{
-                          a: ({ node, ...props }) => <a {...props} className="text-blue-700 font-bold underline hover:text-blue-400 transition-colors" rel="noopener noreferrer" />,
+                          a: ({ node, href, ...props }) => {
+                            const isInternal = href?.startsWith("/") || href?.startsWith("https://ann-travel.com");
+
+                            if (isInternal) {
+                              return <Link href={href || "#"} className="text-blue-700 font-bold underline hover:text-blue-400 transition-colors" {...props} />;
+                            }
+
+                            return <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold underline hover:text-blue-400 transition-colors" {...props} />;
+                          },
                         }}
                       >
                         {msg.content}
@@ -168,7 +172,11 @@ export default function Chatbot() {
                   placeholder="Ketik pesan..."
                   className="flex-1 bg-zinc-100 border-none rounded-full px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#D4AF37] outline-none transition-all"
                 />
-                <button onClick={handleSend} disabled={isLoading || !input.trim()} className="p-2.5 bg-[#D4AF37] text-[#000080] rounded-full hover:bg-[#b8962e] disabled:opacity-50 transition-all shadow-md">
+                <button
+                  onClick={handleSend}
+                  disabled={isLoading || !input.trim()}
+                  className="p-2.5 bg-[#D4AF37] text-[#000080] rounded-full hover:bg-[#b8962e] disabled:opacity-50 transition-all shadow-md cursor-pointer disabled:cursor-not-allowed disabled:hover:bg-[#D4AF37]"
+                >
                   <Send size={18} />
                 </button>
               </div>
@@ -182,7 +190,7 @@ export default function Chatbot() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-[#000080] border-2 border-[#D4AF37] text-[#D4AF37] rounded-full shadow-xl flex items-center justify-center hover:bg-[#000066] transition-all"
+        className="w-14 h-14 bg-[#000080] border-2 border-[#D4AF37] text-[#D4AF37] rounded-full shadow-xl flex items-center justify-center hover:bg-[#000066] transition-all cursor-pointer"
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={28} />}
       </motion.button>

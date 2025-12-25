@@ -1,5 +1,6 @@
 import { InfiniteSlider } from "./ui/infinite-slider";
 import { ProgressiveBlur } from "./ui/progressive-blur";
+import Image from "next/image";
 
 export const TestiCloud = () => {
   return (
@@ -12,29 +13,29 @@ export const TestiCloud = () => {
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
             <InfiniteSlider speedOnHover={15} speed={20} gap={70}>
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi1.avif" alt="testi1" height="auto" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi1.avif" alt="testi1" width={1} height={1} />
               </div>
 
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi2.avif" alt="testi2" height="16" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi2.avif" alt="testi2" width={1} height={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi3.avif" alt="testi3" height="16" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi3.avif" alt="testi3" width={1} height={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi4.avif" alt="testi4" height="20" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi4.avif" alt="testi4" width={1} height={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi5.avif" alt="testi5" height="20" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi5.avif" alt="testi5" width={1} height={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi6.avif" alt="testi6" height="16" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi6.avif" alt="testi6" width={1} height={1} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi7.avif" alt="testi7" height="20" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi7.avif" alt="testi7" width={5} height={30} />
               </div>
               <div className="flex">
-                <img className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer" src="/testimoni/testi8.avif" alt="testi8" height="20" width="auto" />
+                <Image className="mx-auto h-120 w-fit dark:invert hover:cursor-pointer " src="/testimoni/testi8.avif" alt="testi8" width={5} height={30} />
               </div>
             </InfiniteSlider>
 

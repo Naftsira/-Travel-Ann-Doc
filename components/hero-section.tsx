@@ -53,21 +53,6 @@ export default function HeroSection() {
                 }}
                 className="mt-12"
               >
-                <form action="" className="mx-auto max-w-sm">
-                  <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.5rem)] border pr-2 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
-                    <Mail className="pointer-events-none absolute inset-y-0 left-4 my-auto size-4" />
-
-                    <input placeholder="Your mail address" className="h-12 w-full bg-transparent pl-12 focus:outline-none" type="email" />
-
-                    <div className="md:pr-1.5 lg:pr-0">
-                      <Button aria-label="submit" size="sm" className="rounded-(--radius)">
-                        <span className="hidden md:block">Get Started</span>
-                        <SendHorizonal className="relative mx-auto size-5 md:hidden" strokeWidth={2} />
-                      </Button>
-                    </div>
-                  </div>
-                </form>
-
                 <Image src="/passport.png" alt="hero-img" width={1000} height={1000} objectFit="cover" className="z-40" />
                 <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] mix-blend-overlay [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:opacity-5"></div>
               </AnimatedGroup>
