@@ -43,6 +43,7 @@ const links: FooterGroup[] = [
       },
       {
         title: "info@anntraveldoc.com",
+        times: "",
         href: "#",
       },
     ],
