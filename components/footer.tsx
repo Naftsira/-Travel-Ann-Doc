@@ -1,7 +1,18 @@
 import { Logo } from "@/components/logo";
 import Link from "next/link";
 
-const links = [
+interface FooterItem {
+  title: string;
+  href: string;
+  times?: string;
+}
+
+interface FooterGroup {
+  group: string;
+  items: FooterItem[];
+}
+
+const links: FooterGroup[] = [
   {
     group: "Quick Links",
     items: [
@@ -32,7 +43,6 @@ const links = [
       },
       {
         title: "info@anntraveldoc.com",
-        times: "",
         href: "#",
       },
     ],
