@@ -21,7 +21,7 @@ const transitionVariants = {
       },
     },
   },
-};
+} as const;
 
 export default function HeroSection() {
   return (
