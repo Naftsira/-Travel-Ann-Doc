@@ -1,5 +1,6 @@
 "use client";
 import * as THREE from "three";
+import { MeshPhongMaterial } from "three";
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
@@ -100,12 +101,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
   useEffect(() => {
     if (!globeRef.current || !isInitialized) return;
 
-    const globeMaterial = globeRef.current.globeMaterial() as unknown as {
-      color: Color;
-      emissive: Color;
-      emissiveIntensity: number;
-      shininess: number;
-    };
+    const globeMaterial = globeRef.current.globeMaterial() as MeshPhongMaterial;
     globeMaterial.transparent = true; // Mengizinkan transparansi
     globeMaterial.opacity = 0;
     globeMaterial.color = new Color(globeConfig.globeColor);
