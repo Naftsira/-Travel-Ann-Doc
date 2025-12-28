@@ -1,4 +1,5 @@
 "use client";
+import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
@@ -64,7 +65,7 @@ let numbersOfRings = [0];
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
-  const groupRef = useRef();
+  const groupRef = useRef<THREE.Group | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
   const defaultProps = {
@@ -86,11 +87,13 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
   // Initialize globe only once
   useEffect(() => {
-    if (!globeRef.current && groupRef.current) {
-      globeRef.current = new ThreeGlobe();
-      (groupRef.current as any).add(globeRef.current);
-      setIsInitialized(true);
-    }
+    if (!groupRef.current || globeRef.current) return;
+
+    const globe = new ThreeGlobe();
+    groupRef.current.add(globe);
+    globeRef.current = globe;
+
+    setIsInitialized(true);
   }, []);
 
   // Build material when globe is initialized or when relevant props change
