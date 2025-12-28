@@ -32,7 +32,7 @@ ATURAN KOMUNIKASI:
 `;
 
 async function callOpenRouter(model: string, messages: any[]) {
-  console.log("🤖 Using model:", model);
+  console.log("Using model:", model);
 
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
@@ -60,12 +60,12 @@ export async function POST(req: Request) {
 
     const messages = [{ role: "system", content: SYSTEM_PROMPT }, ...history, { role: "user", content: message }];
 
-    // 1️⃣ Coba model utama
+    // Coba model utama
     let data;
     try {
       data = await callOpenRouter(PRIMARY_MODEL, messages);
     } catch (err) {
-      console.warn("⚠️ Primary model failed, switching to fallback");
+      console.warn("Primary model failed, switching to fallback");
       data = await callOpenRouter(FALLBACK_MODEL, messages);
     }
 
@@ -76,7 +76,7 @@ export async function POST(req: Request) {
       model_used: data.model ?? "unknown",
     });
   } catch (error) {
-    console.error("❌ AI Error:", error);
+    console.error("AI Error:", error);
     return NextResponse.json({ error: "Maaf, sistem sedang sibuk." }, { status: 500 });
   }
 }

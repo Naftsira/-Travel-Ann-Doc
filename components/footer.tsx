@@ -100,10 +100,13 @@ export default function FooterSection() {
                 {link.items.map((item, index) => (
                   <Link key={index} href={item.href} className="text-muted-foreground hover:text-primary block duration-150">
                     <span>{item.title}</span>
-                    <span>
-                      <br />
-                      {item.times}
-                    </span>
+
+                    {item.times && (
+                      <span>
+                        <br />
+                        {item.times}
+                      </span>
+                    )}
                   </Link>
                 ))}
               </div>
