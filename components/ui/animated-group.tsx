@@ -5,7 +5,7 @@ import { motion, Variants } from "motion/react";
 
 export type PresetType = "fade" | "slide" | "scale" | "blur" | "blur-slide" | "zoom" | "flip" | "bounce" | "rotate" | "swing";
 
-type AsTag = keyof JSX.IntrinsicElements;
+type AsTag = keyof HTMLElementTagNameMap;
 
 export type AnimatedGroupProps = {
   children: ReactNode;
